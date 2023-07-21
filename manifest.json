@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Return policy highlighter",
+  "version": "0.1",
+  "description": "Highlights return policy of items on amazon.",
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+		"https://www.amazon.com.au/*",
+		"https://www.amazon.at/*",
+		"https://www.amazon.com.br/*",
+		"https://www.amazon.ca/*",
+		"https://www.amazon.cn/*",
+		"https://www.amazon.cz/*",
+		"https://www.amazon.eu/*",
+		"https://www.egypt.souq.com/*",
+		"https://www.amazon.fr/*",
+		"https://www.amazon.de/*",
+		"https://www.amazon.com/global/*",
+		"https://www.amazon.in/*",
+		"https://www.amazon.it/*",
+		"https://www.amazon.co.jp/*",
+		"https://www.uae.souq.com/kw-en//*",
+		"https://www.amazon.com.mx/*",
+		"https://www.amazon.nl/*",
+		"https://www.amazon.pl/*",
+		"https://www.saudi.souq.com/*",
+		"https://www.amazon.com.sg/*",
+		"https://www.amazon.es/*",
+		"https://www.amazon.de/tr/*",
+		"https://www.uae.souq.com/*",
+		"https://www.amazon.co.uk/*",
+		"https://www.amazon.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
