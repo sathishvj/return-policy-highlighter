@@ -27,10 +27,9 @@ Because I bought stuff and later realized that they were not returnable. One too
 - On the top left, there should be a button named "Load unpacked".
 - Choose the directory where this extension code (manifest.json and .js files) has been downloaded.
 
-# Why can't I put it on the Chrome Extensions webstore?
+# Is it on the Chrome Extensions webstore?
 
-To upload to the Chrome Extensions store, I have to register a developer account which requires a one time payment of USD5.
-Google isn't accepting my regular credit card with the error that it has been used with another currency. I don't have an alternate card or an alternative at the moment.
+I have submitted the extension for review. The SLA for review is 30 days.
 
 # Updates
 
