@@ -1,6 +1,17 @@
 # Return policy highlighter
 
-Adds a bar on top of the page with the return policy highlighted when you are on an amazon or flipkart.com retail site.
+Adds a bar on top of the page with the return policy highlighted when you are on some amazon sites and flipkart.com retail site.
+
+## Some testing done on sites
+
+- https://www.amazon.in/
+- https://www.flipkart.com/
+- https://www.amazon.ca/
+- https://www.amazon.com/
+- https://www.amazon.com.mx/
+- https://www.amazon.co.uk/
+- https://www.amazon.de/
+- https://www.amazon.es/
 
 Why?
 Because I bought stuff and later realized that they were not returnable. One too many times. Fixing for that error.
@@ -23,6 +34,8 @@ Google isn't accepting my regular credit card with the error that it has been us
 
 # Updates
 
+- 2023/07/23 Refactored code to make it work easily for multiple sites
+- 2023/07/23 Tested some of the international amazon sites minimally
 - 2023/07/22 Added support for Flipkart.com
 - 2023/07/22 Added icons
 - 2023/07/22 Added error check if content returned is empty.
