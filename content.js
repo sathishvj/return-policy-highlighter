@@ -9,6 +9,31 @@ var getElementByXPath = function (xPath) {
   return xPathResult.singleNodeValue;
 };
 
+getTextByXPath = function (xPath, field) {
+  var xp = getElementByXPath(xPath);
+  if (!xp) {
+    return "";
+  }
+
+  if (!field) {
+    field = "textContent";
+  }
+
+  var text = "";
+  switch (field) {
+    case "innerText":
+      text = xp.innerText;
+      break;
+    case "innerHTML":
+      text = xp.innerHTML;
+      break;
+    case "textContent":
+      text = xp.textContent;
+      break;
+  }
+  return text.trim();
+};
+
 const xpaths = {
   "www.amazon.in/": [
     '//*[@id="RETURNS_POLICY"]/span/div[2]/span',
@@ -36,29 +61,44 @@ for (const site of Object.keys(xpaths)) {
 
   if (document.URL.indexOf(site) != -1) {
     for (const xpath of xpaths[site]) {
-      var xp = getElementByXPath(xpath);
-      // try others if above doesn't work
-      if (!xp) {
-        continue;
-      } else {
-        returnPolicy = xp.textContent;
-        break;
-      }
+      returnPolicy = getTextByXPath(xpath, "textContent");
+      if (returnPolicy != "") break;
     }
   }
 }
 
 // special cases
+
 if (document.URL.indexOf("flipkart.com") != -1) {
   if (returnPolicy.endsWith("?")) {
     returnPolicy = returnPolicy.slice(0, -1);
   }
 }
 
+const amazonInGeneralReturnPolicies = {
+  Books: "For Books, typically, 10 day replacement only.",
+  "Kindle e-Readers":
+    " For Kindle e-Readers, typically, 7 Days Refund for accidental orders only.",
+};
+
 if (document.URL.indexOf("amazon.in") != -1) {
-  if (returnPolicy.indexOf("Returns Policy") != -1) {
-    returnPolicy = "Info inside Returns Policy link on page.";
+  var generalReturnPolicy = "";
+  if (returnPolicy == "" || returnPolicy == "Returns Policy") {
+    var category = getTextByXPath(
+      '//*[@id="nav-subnav"]/a[1]/span',
+      "innerText"
+    );
+    // alert("Cateogry: " + category);
+
+    if (category in amazonInGeneralReturnPolicies)
+      generalReturnPolicy += amazonInGeneralReturnPolicies[category];
   }
+
+  if (returnPolicy.indexOf("Returns Policy") != -1) {
+    returnPolicy = "See Returns Policy link on page.";
+  }
+
+  returnPolicy += " " + generalReturnPolicy;
 }
 
 if (returnPolicy != "") {
@@ -67,7 +107,7 @@ if (returnPolicy != "") {
   bar.style.color = "red";
   bar.style.height = "30px";
   bar.style.width = "100%";
-  bar.style.fontSize = "25px";
+  bar.style.fontSize = "20px";
   bar.style.textAlign = "center";
 
   //bar.innerHTML = xp.innerText;

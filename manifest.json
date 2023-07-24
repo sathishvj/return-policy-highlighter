@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Return policy highlighter",
-  "version": "0.2",
+  "version": "0.3",
   "description": "Highlights return policy of items on amazon and flpkart.",
   "permissions": ["tabs"],
   "icons": {
