@@ -101,7 +101,7 @@ if (document.URL.indexOf("amazon.in") != -1) {
   returnPolicy += " " + generalReturnPolicy;
 }
 
-if (returnPolicy != "") {
+if (returnPolicy.trim() != "") {
   const bar = document.createElement("div");
   //bar.style.backgroundColor = "yellow";
   bar.style.color = "red";
