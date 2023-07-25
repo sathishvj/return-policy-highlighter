@@ -3,7 +3,6 @@
   "name": "Return policy highlighter",
   "version": "0.3",
   "description": "Highlights return policy of items on amazon and flpkart.",
-  "permissions": ["tabs"],
   "icons": {
     "16": "images/icon-16.png",
     "32": "images/icon-32.png",
