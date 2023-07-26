@@ -2,6 +2,10 @@
 
 Adds a bar on top of the page with the return policy highlighted when you are on some amazon sites and flipkart.com retail site.
 
+# Install from Chrome Webstore
+
+[Return Policy Highlighter](https://chrome.google.com/webstore/detail/return-policy-highlighter/bbakinkejohnjcipiccmjlhnmaeecckg)
+
 ## Some testing done on sites
 
 - https://www.amazon.in/
