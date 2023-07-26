@@ -31,12 +31,9 @@ Because I bought stuff and later realized that they were not returnable. One too
 - On the top left, there should be a button named "Load unpacked".
 - Choose the directory where this extension code (manifest.json and .js files) has been downloaded.
 
-# Is it on the Chrome Extensions webstore?
-
-I have submitted the extension for review. The SLA for review is 30 days.
-
 # Updates
 
+- 2023/07/26 Added info about Chrome Webstore in readme
 - 2023/07/23 Refactored code to make it work easily for multiple sites
 - 2023/07/23 Tested some of the international amazon sites minimally
 - 2023/07/22 Added support for Flipkart.com
