@@ -38,6 +38,7 @@ const xpaths = {
   "www.amazon.in/": [
     '//*[@id="RETURNS_POLICY"]/span/div[2]/span',
     '//*[@id="RETURNS_POLICY"]/div[2]/span',
+    '//*[@id="RETURNS_POLICY"]/span/div[2]',
   ],
   "flipkart.com": [
     '//*[@id="container"]/div/div[3]/div[1]/div[2]/div[*]/div[*]/div/div[2]/div[2]/ul/li/div',
@@ -100,6 +101,7 @@ if (document.URL.indexOf("amazon.in") != -1) {
 
   returnPolicy += " " + generalReturnPolicy;
 }
+console.log("Return Policy:", returnPolicy);
 
 if (returnPolicy.trim() != "") {
   const bar = document.createElement("div");
